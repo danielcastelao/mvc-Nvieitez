@@ -97,7 +97,7 @@
                 public void actionPerformed(ActionEvent AcciónBotónCrearCoche){
 
                     // Dentro del ActionPerformed vamos a llamar al método "CrearCoche" para iniciar el sistema lógico.
-                    Model.CrearCoche();
+                    Model.CrearCoche(null, null, null, 0);
 
                 } // Fin del "ActionPerformed".
 

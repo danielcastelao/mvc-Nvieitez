@@ -43,14 +43,14 @@
     public static ArrayList <Coche> Parking = new ArrayList<>();
 
     // Ahora creamos un método "CrearCoche" que se encargue del sistema lógico de crear un coche y añadirlo al array.
-    public static void CrearCoche(){
+    public static Coche CrearCoche(String ModelMarca, String ModelModelo, String ModelMatrícula, int  ModelVelocidad){
 
         // Ahora vamos pedir los datos por pantalla.
-        String ModelMarca = JOptionPane.showInputDialog("Escribe la marca de tu nuevo coche:");
-        String ModelModelo = JOptionPane.showInputDialog("Escribe el modelo de tu nuevo coche:");
-        String ModelMatrícula = JOptionPane.showInputDialog("Escribe la matrícula de tu nuevo coche:");
+        ModelMarca = JOptionPane.showInputDialog("Escribe la marca de tu nuevo coche:");
+        ModelModelo = JOptionPane.showInputDialog("Escribe el modelo de tu nuevo coche:");
+        ModelMatrícula = JOptionPane.showInputDialog("Escribe la matrícula de tu nuevo coche:");
 
-        Integer ModelVelocidad = Integer.parseInt(JOptionPane.showInputDialog("Escribe la velocidad máxima de tu nuevo coche:"));
+        ModelVelocidad = Integer.parseInt(JOptionPane.showInputDialog("Escribe la velocidad máxima de tu nuevo coche:"));
 
         // Introducimos los datos a las variables de la clase "Coche".
         Coche NuevoCoche = new Coche();
@@ -66,6 +66,9 @@
 
         // Introducimos un mensaje de éxito.
         JOptionPane.showMessageDialog(null, "El coche se ha creado correctamente.");
+
+        // Retornamos el nuevo coche.
+        return NuevoCoche;
         
     } // Fin del método "CrearCoche".
 
