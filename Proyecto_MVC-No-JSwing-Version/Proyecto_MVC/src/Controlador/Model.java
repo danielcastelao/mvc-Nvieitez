@@ -49,16 +49,16 @@
         Scanner Scanner = new Scanner(System.in);
 
         // Ahora vamos pedir los datos por consola y recogerlos con el Scanner.
-        System.out.println("Escribe la marca de tu nuevo coche:");
-        ModelMarca = Scanner.nextLine();
+        System.out.println("\nEscribe la marca de tu nuevo coche:");
+        ModelMarca = Scanner.nextLine(); 
 
-        System.out.println("Escribe el modelo de tu nuevo coche:");
+        System.out.println("\nEscribe el modelo de tu nuevo coche:");
         ModelModelo = Scanner.nextLine();
 
-        System.out.println("Escribe la matrícula de tu nuevo coche:");
+        System.out.println("\nEscribe la matrícula de tu nuevo coche:");
         ModelMatrícula = Scanner.nextLine();
 
-        System.out.println("Escribe la velocidad máxima de tu nuevo coche:");
+        System.out.println("\nEscribe la velocidad máxima de tu nuevo coche:");
         ModelVelocidad = Integer.parseInt(Scanner.nextLine());
 
         // Introducimos los datos a las variables de la clase "Coche".
@@ -74,7 +74,10 @@
         Parking.add(NuevoCoche);
 
         // Introducimos un mensaje de éxito.
-        System.out.println("El coche se ha creado correctamente.");
+        System.out.println("\nEl coche se ha creado correctamente.");
+
+        // Imprimimos un separador para que se muestre bien el menú en consola
+        System.out.println("\n---------------------------------------------------------------------");
 
         // Retornamos el nuevo coche.
         return NuevoCoche;
