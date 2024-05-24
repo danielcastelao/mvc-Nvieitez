@@ -22,7 +22,7 @@
 // COMIENZO DEL CÓDIGO ------------------------------------------------------------------------------------------------------------------------------
 
         // Para comenzar nuestro código vamos a crear método que contenga nuestro menú principal.
-        public static void MétodoMenúPrincipal(){
+        public static void MetodoMenuPrincipal(){
 
             // Dentro del método vamos a crear el menú principal donde el usuario podrá elegir que opción desea realizar.
             System.out.println("""
@@ -48,7 +48,7 @@
                 Model.CrearCoche(null, null, null, 0);
 
                 // Enviamos al usuario de vuelta al menú principal.
-                Controller.MétodoMenúPrincipal();
+                Controller.MetodoMenuPrincipal();
 
             } // Fin del "If".
 
@@ -70,7 +70,7 @@
                     System.out.println("\n---------------------------------------------------------------------");
 
                     // Enviamos al usuario de vuelta al menú principal
-                    Controller.MétodoMenúPrincipal();
+                    Controller.MetodoMenuPrincipal();
 
                 } // Fin del segundo condicional.
 

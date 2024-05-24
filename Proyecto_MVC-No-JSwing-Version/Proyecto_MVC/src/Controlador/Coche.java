@@ -23,7 +23,7 @@
     String Modelo;
 
     // Declaramos una variable de tipo "String" que se encargue de recoger los datos de la matrícula del coche.
-    String Matrícula;
+    String Matricula;
 
     // Declaramos una variable de tipo "String" que se encargue de recoger la velocidad del coche.
     Integer Velocidad;
@@ -46,10 +46,10 @@
 
     } // Fin del método "GetModelo".
 
-    public String GetMatrícula(String Matrícula){
+    public String GetMatrícula(String Matricula){
 
         // Dentro del método retornamos el valor para las otras clases.
-        return Matrícula;
+        return Matricula;
 
     } // Fin del método "GetMatrícula".
 
@@ -77,10 +77,10 @@
 
     } // Fin del método "SetModelo".
 
-    public void SetMatrícula(String Matrícula){
+    public void SetMatricula(String Matricula){
 
         // Dentro del método igualamos la variable a una nueva que recoja los datos que se van a introducir.
-        this.Matrícula = Matrícula;
+        this.Matricula = Matricula;
 
     } // Fin del método "SetMatrícula".
 

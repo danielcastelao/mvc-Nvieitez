@@ -26,7 +26,7 @@
     public static void main(String[] args) throws Exception {
 
         // Para iniciar nuestro programa, primero vamos a llamar a la clase "Controller" para que muestre el menú principal.
-        Controller.MétodoMenúPrincipal();
+        Controller.MetodoMenuPrincipal();
         
     } // Fin de la clase "App".
 

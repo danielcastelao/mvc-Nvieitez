@@ -43,7 +43,7 @@
     public static ArrayList <Coche> Parking = new ArrayList<>();
 
     // Ahora creamos un método "CrearCoche" que se encargue del sistema lógico de crear un coche y añadirlo al array.
-    public static Coche CrearCoche(String ModelMarca, String ModelModelo, String ModelMatrícula, int  ModelVelocidad){
+    public static Coche CrearCoche(String ModelMarca, String ModelModelo, String ModelMatricula, int  ModelVelocidad){
 
         // Ahora vamos a declarar el Scanner para poder recoger los datos que inserta usuario por consola.
         Scanner Scanner = new Scanner(System.in);
@@ -56,7 +56,7 @@
         ModelModelo = Scanner.nextLine();
 
         System.out.println("\nEscribe la matrícula de tu nuevo coche:");
-        ModelMatrícula = Scanner.nextLine();
+        ModelMatricula = Scanner.nextLine();
 
         System.out.println("\nEscribe la velocidad máxima de tu nuevo coche:");
         ModelVelocidad = Integer.parseInt(Scanner.nextLine());
@@ -66,7 +66,7 @@
 
         NuevoCoche.SetMarca(ModelMarca);
         NuevoCoche.SetModelo(ModelModelo);
-        NuevoCoche.SetMatrícula(ModelMatrícula);
+        NuevoCoche.SetMatricula(ModelMatricula);
 
         NuevoCoche.SetVelocidad(ModelVelocidad);
 
