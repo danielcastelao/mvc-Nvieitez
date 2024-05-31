@@ -55,7 +55,7 @@
                 // Creamos un separador para que la información se muestre bien en consola.
                 System.out.println("\n---------------------------------------------------------------------");
 
-                // Enviamos al usuario de vuelta al menú principal
+                // Enviamos al usuario de vuelta al menú principal.
                 Controller.MetodoMenuPrincipal();
                 
             } // Fin del condicional "If". 
