@@ -64,7 +64,30 @@
                 if (RespuestaUsuario == 2) {
 
                     // En caso de que la respuesta del usuario sea 2, llamamos a la clase "View" para mostrar la velocidad y poder cambiarla.
-                    View.ImprimirCoches();
+                    System.out.println("""
+
+                        Por favor, escribe el número de la opción que desees realizar.
+
+                        1. Aumentar Velocidad!
+
+                        2. Disminuir Velocidad!
+                                
+                    """);
+
+                    int RespuestaUsuario2 = Integer.parseInt(Scanner.nextLine());
+                    
+                    if (RespuestaUsuario2 == 1){
+
+                        Model.subirVelocidad();
+                    }
+                    if (RespuestaUsuario2 == 2){
+
+                        Model.bajarVelocidad();
+                    }
+                    if (RespuestaUsuario2 < 3){
+
+                        System.out.println("El dato introducido no existe, vuelve a intentarlo");
+                    }
 
                 } // Fin del segundo "If".
 
