@@ -33,10 +33,16 @@ classDiagram
           +getCoche(String)
           +cambiarVelocidad(String, Integer)
           +getVelocidad(String)
+          +subirVelocidad(int)
+          +bajarVelocidad(int)
+      class Observer {
+          + ComprobanteVelocidadAumentada(int)
+          + ComprobanteVelocidadReducida(int)
       }
     Controller "1" *-- "1" Model : association
     Controller "1" *-- "1" View : association
     Model "1" *-- "1..n" Coche : association
+    Observer "1" *-- "1" Model : association
       
 ```
 
