@@ -16,6 +16,9 @@
     // Importamos la clase "Coche" para poder usar sus métodos y funcionalidades.
     import com.mvc.coche.Coche;
 
+    // Importamos la clase "Controller" para poder usar sus métodos y funcionalidades.
+    import com.mvc.controller.Controller;
+
 // CLASE MODEL --------------------------------------------------------------------------------------------------------------------------------------
 
     // Esta clase contiene la funcionalidad de la creación de coches.
@@ -89,5 +92,58 @@
         return NuevoCoche;
 
     } // Fin del método "CrearCoche".
+      
+// --------------------------------------------------------------------------------------------------------------------------------------------------
+
+    // Creamos el método "subirVelocidad"
+    public static String subirVelocidad(){
+
+        // Creamos un separador para que la información se muestre bien en consola.
+        System.out.println("\n---------------------------------------------------------------------");
+
+        // Ahora vamos a declarar el Scanner para poder recoger los datos que inserta usuario por consola.
+        Scanner Scanner = new Scanner(System.in);
+
+        // Ahora pedimos por consola el coche que queremos modificar.
+        System.out.println("Por favor, escribe la matrícula del coche que quieras modificar");
+
+        // Creamos un booleano que se determine si se ha encontrado el coche
+        Boolean cocheEncontrado = false;
+
+        // También creamos una variable "int" que determine la velocidad introducida.
+        String velocidadIntroducida = "";
+
+        // Creamos un condicional que se encargue de buscar en el array el coche.
+        for(int x = 0; x < Parking.size(); x++){
+
+            if( Scanner.nextLine().equals(Parking.get(3))) {
+                
+                System.out.println("El coche ha sido encontrado, cuanta velocidad te gustaría aumentar?");
+                velocidadIntroducida = Scanner.nextLine();
+                cocheEncontrado = true;
+
+                // Creamos otro separador para que la información se muestre bien en consola.
+                System.out.println("\n---------------------------------------------------------------------");
+
+                // Enviamos de vuelta al usuario al menú principal
+                Controller.MetodoMenuPrincipal();
+
+            } // Fin del condicional "If";
+
+        } // Fin del bucle "For";
+    
+        // Fuera del bucle creamos otro condicional que imprima un mensaje en caso de que no se encuentre el dato.
+        if( !cocheEncontrado) {
+
+            System.out.println("El coche que buscas no coincide con ninguna matrícula");
+
+        } // Fin del condicional "If".
+
+        // Finalmente retornamos el la velocidad introducida para que el observer pueda comprobarla.
+        return velocidadIntroducida;
+
+    } // Fin del método subir velocidad.
+
+// --------------------------------------------------------------------------------------------------------------------------------------------------
 
     } // Fin de la clase "Model".
