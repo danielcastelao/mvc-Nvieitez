@@ -19,6 +19,10 @@
     // Importamos la clase "Controller" para poder usar sus métodos y funcionalidades.
     import com.mvc.controller.Controller;
 
+    import java.beans.VetoableChangeSupport;
+
+    import com.mvc.observer.Observer;
+
 // CLASE MODEL --------------------------------------------------------------------------------------------------------------------------------------
 
     // Esta clase contiene la funcionalidad de la creación de coches.
@@ -96,7 +100,7 @@
 // --------------------------------------------------------------------------------------------------------------------------------------------------
 
     // Creamos el método "subirVelocidad"
-    public static String subirVelocidad(){
+    public static Integer subirVelocidad(){
 
         // Creamos un separador para que la información se muestre bien en consola.
         System.out.println("\n---------------------------------------------------------------------");
@@ -111,16 +115,20 @@
         Boolean cocheEncontrado = false;
 
         // También creamos una variable "int" que determine la velocidad introducida.
-        String velocidadIntroducida = "";
+        int velocidadIntroducida = 0;
 
         // Creamos un condicional que se encargue de buscar en el array el coche.
         for(int x = 0; x < Parking.size(); x++){
 
             if( Scanner.nextLine().equals(Parking.get(3))) {
-                
-                System.out.println("El coche ha sido encontrado, cuanta velocidad te gustaría aumentar?");
-                velocidadIntroducida = Scanner.nextLine();
+
                 cocheEncontrado = true;
+
+                System.out.println("El coche ha sido encontrado, cuanta velocidad te gustaría aumentar?");
+                velocidadIntroducida = Integer.parseInt(Scanner.nextLine());
+
+                // Una vez introducida la velocidad llamamos al observer.
+                Observer.ComprobarVelocidadAumentada();
 
                 // Creamos otro separador para que la información se muestre bien en consola.
                 System.out.println("\n---------------------------------------------------------------------");
@@ -149,56 +157,60 @@
 
 // --------------------------------------------------------------------------------------------------------------------------------------------------
 
-    // Creamos el método "bajarVelocidad"
-    public static String bajarVelocidad(){
+        // Creamos el método "bajarVelocidad"
+        public static Integer bajarVelocidad(){
 
-        // Creamos un separador para que la información se muestre bien en consola.
-        System.out.println("\n---------------------------------------------------------------------");
-
-        // Ahora vamos a declarar el Scanner para poder recoger los datos que inserta usuario por consola.
-        Scanner Scanner = new Scanner(System.in);
-
-        // Ahora pedimos por consola el coche que queremos modificar.
-        System.out.println("Por favor, escribe la matrícula del coche que quieras modificar");
-
-        // Creamos un booleano que se determine si se ha encontrado el coche
-        Boolean cocheEncontrado = false;
-
-        // También creamos una variable "int" que determine la velocidad introducida.
-        String velocidadIntroducida = "";
-
-        // Creamos un condicional que se encargue de buscar en el array el coche.
-        for(int x = 0; x < Parking.size(); x++){
-
-            if( Scanner.nextLine().equals(Parking.get(3))) {
-                
-                System.out.println("El coche ha sido encontrado, cuanta velocidad te gustaría disminuir?");
-                velocidadIntroducida = Scanner.nextLine();
-                cocheEncontrado = true;
-
-                // Creamos otro separador para que la información se muestre bien en consola.
-                System.out.println("\n---------------------------------------------------------------------");
-
+            // Creamos un separador para que la información se muestre bien en consola.
+            System.out.println("\n---------------------------------------------------------------------");
+    
+            // Ahora vamos a declarar el Scanner para poder recoger los datos que inserta usuario por consola.
+            Scanner Scanner = new Scanner(System.in);
+    
+            // Ahora pedimos por consola el coche que queremos modificar.
+            System.out.println("Por favor, escribe la matrícula del coche que quieras modificar");
+    
+            // Creamos un booleano que se determine si se ha encontrado el coche
+            Boolean cocheEncontrado = false;
+    
+            // También creamos una variable "int" que determine la velocidad introducida.
+            int velocidadIntroducida = 0;
+    
+            // Creamos un condicional que se encargue de buscar en el array el coche.
+            for(int x = 0; x < Parking.size(); x++){
+    
+                if( Scanner.nextLine().equals(Parking.get(3))) {
+    
+                    cocheEncontrado = true;
+    
+                    System.out.println("El coche ha sido encontrado, cuanta velocidad te gustaría disminuir?");
+                    velocidadIntroducida = Integer.parseInt(Scanner.nextLine());
+    
+                    // Una vez introducida la velocidad llamamos al observer.
+                    Observer.ComprobarVelocidadAumentada();
+    
+                    // Creamos otro separador para que la información se muestre bien en consola.
+                    System.out.println("\n---------------------------------------------------------------------");
+    
+                    // Enviamos de vuelta al usuario al menú principal
+                    Controller.MetodoMenuPrincipal();
+    
+                } // Fin del condicional "If";
+    
+            } // Fin del bucle "For";
+        
+            // Fuera del bucle creamos otro condicional que imprima un mensaje en caso de que no se encuentre el dato.
+            if( !cocheEncontrado) {
+    
+                System.out.println("El coche que buscas no coincide con ninguna matrícula");
+    
                 // Enviamos de vuelta al usuario al menú principal
                 Controller.MetodoMenuPrincipal();
-
-            } // Fin del condicional "If";
-
-        } // Fin del bucle "For";
     
-        // Fuera del bucle creamos otro condicional que imprima un mensaje en caso de que no se encuentre el dato.
-        if( !cocheEncontrado) {
-
-            System.out.println("El coche que buscas no coincide con ninguna matrícula");
-
-            // Enviamos de vuelta al usuario al menú principal
-            Controller.MetodoMenuPrincipal();
-
-        } // Fin del condicional "If".
-
-        // Finalmente retornamos el la velocidad introducida para que el observer pueda comprobarla.
-        return velocidadIntroducida;
-
-    } // Fin del método subir velocidad.
+            } // Fin del condicional "If".
+    
+            // Finalmente retornamos el la velocidad introducida para que el observer pueda comprobarla.
+            return velocidadIntroducida;
+    
+        } // Fin del método "bajarVelocidad".
 
     } // Fin de la clase "Model".
