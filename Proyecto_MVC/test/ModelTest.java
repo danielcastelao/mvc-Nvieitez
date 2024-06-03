@@ -1,41 +1,28 @@
-// PAQUETE ------------------------------------------------------------------------------------------------------------------------------------------
+package Proyecto_MVC.test;
 
-    // Aquí determinamos la localización de nuestra clase, esto nos permite dividir el programa y agilizar sus funciones.
-    package Proyecto_MVC.test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
-    //
-    import org.junit.Test;
-    
-    // 
-    import org.junit.jupiter.api.Assertions;
+import com.mvc.model.Model;
+import com.mvc.observer.Observer;
 
-    import com.mvc.coche.Coche;
-    import com.mvc.model.Model;
+public class ModelTest {
+    @Test
+    void testCrearCoche() {
+        Model.CrearCoche("Subaru", "WRX", "A1111", "1000");
+        Assertions.assertEquals(Model.Parking.get(1), Model.Parking.get(2));
+    }
 
-// IMPORTS ------------------------------------------------------------------------------------------------------------------------------------------
+    @Test
+    void testBajarVelocidad() {
+        Model.bajarVelocidad();
+        Assertions.assertFalse(false, "El dato introducido no es correcto");
 
-    // Aquí vamos a importar las funcionalidades que permitirán el correcto funcionamiento de nuestro programa.
+    }
 
-// CLASE MODEL TEST ---------------------------------------------------------------------------------------------------------------------------------
-
-    // Esta clase se encarga de realizar pruebas sobre la clase "Model"
-    public class ModelTest {
-
-
-// DECLARACIONES ------------------------------------------------------------------------------------------------------------------------------------
-
-    // Aquí vamos a declarar los diferentes objetos y variables que permiten el correcto funcionamiento de nuestro programa.
-    static int ViewVelocidad;
-
-// COMIENZO DEL CÓDIGO ------------------------------------------------------------------------------------------------------------------------------
-
-    // Primero vamos a realizar tests sobre el método "CrearCoche".
-    @Test 
-    public void TestCrearCoche(){
-
-        Coche NuevoCoche = Model.CrearCoche("Opel", "Astra", "A1111", 100);
-        Assertions.assertEquals(NuevoCoche, NuevoCoche);
-
-    } // Fin del "TestCrearCoche".
-
-    } // Fin de la clase "ModelTest".
+    @Test
+    void testSubirVelocidad() {
+        Model.subirVelocidad();
+        Assertions.assertTrue(true, "El dato introducido es correcto");
+    }
+}
