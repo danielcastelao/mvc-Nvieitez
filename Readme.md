@@ -33,13 +33,14 @@ classDiagram
           +getCoche(String)
           +cambiarVelocidad(String, Integer)
           +getVelocidad(String)
+          +aumentarVelocidad(int)
+          +reducirVelocidad(int)
       }
     Controller "1" *-- "1" Model : association
     Controller "1" *-- "1" View : association
     Model "1" *-- "1..n" Coche : association
       
 ```
-
 ---
 
 ### Diagrama de Secuencia
